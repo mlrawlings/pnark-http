@@ -1,7 +1,7 @@
 {
   "name": "pnark-http",
   "version": "1.0.0",
-  "description": "",
+  "description": "A plugin for pnark that shows requests made on the server with node's `http` module in the browser with a timeline chart and additional information about the requests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
