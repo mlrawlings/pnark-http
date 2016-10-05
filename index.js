@@ -27,6 +27,10 @@ var httpReporter = report => {
                 stack:r.stack
             }
 
+            if(!data.url.host) {
+                data.url.host = data.url.hostname || data.request._headers && data.request._headers.host
+            }
+
             if(r.response) {
                 data.response = r.response.value
                 data.status = r.response.value.statusCode
@@ -145,6 +149,8 @@ function getChartData(report, requests) {
         series: [{
             name: 'Timing',
             data: requests.map(r => [r.start, r.finish])
-        }]
+        }],
+
+        height: Math.max(250, 100+15*requests.length)
     }
 }
